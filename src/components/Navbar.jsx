@@ -33,7 +33,7 @@ export default function Navbar({ theme, toggleTheme, onOpenPalette }) {
     <header className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav-inner">
         <a href="#top" className="logo">
-          <span className="logo-mark">TM</span>
+          <img src={profile.photo} alt="" className="logo-avatar" />
           <span className="logo-text">{profile.name}</span>
         </a>
 

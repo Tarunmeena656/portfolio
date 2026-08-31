@@ -72,27 +72,16 @@ export default function Hero() {
           </div>
 
           <Reveal delay={200} className="hero-visual">
-            <div className="terminal">
-              <div className="terminal-bar">
-                <span className="dot red" />
-                <span className="dot yellow" />
-                <span className="dot green" />
-                <span className="terminal-title">tarun@backend ~ whoami</span>
+            <div className="portrait">
+              <div className="portrait-ring" aria-hidden="true" />
+              <img src={profile.photo} alt={`${profile.name} — ${profile.role}`} className="portrait-img" />
+              <div className="float-badge badge-top">
+                <span className="fb-value">3.6+</span>
+                <span className="fb-label">years shipping backends</span>
               </div>
-              <pre className="terminal-body">
-                <span className="tk-key">const</span> engineer = {"{"}
-                {"\n"}  name: <span className="tk-str">"{profile.name}"</span>,
-                {"\n"}  role: <span className="tk-str">"{profile.role}"</span>,
-                {"\n"}  experience: <span className="tk-num">3.6</span>, <span className="tk-cmt">// years</span>
-                {"\n"}  stack: [<span className="tk-str">"Node.js"</span>, <span className="tk-str">"TypeScript"</span>, <span className="tk-str">"Python"</span>],
-                {"\n"}  cloud: [<span className="tk-str">"AWS Lambda"</span>, <span className="tk-str">"S3"</span>, <span className="tk-str">"API Gateway"</span>],
-                {"\n"}  ai: [<span className="tk-str">"RAG"</span>, <span className="tk-str">"Embeddings"</span>, <span className="tk-str">"LLM APIs"</span>],
-                {"\n"}  scale: <span className="tk-str">"300M+ records"</span>,
-                {"\n"}  openToWork: <span className="tk-bool">true</span>,
-                {"\n"}{"}"};
-                {"\n\n"}<span className="tk-cmt">// fast, observable, fails gracefully</span>
-                {"\n"}<span className="tk-fn">deploy</span>(engineer);<span className="caret" />
-              </pre>
+              <div className="float-badge badge-bottom">
+                <span className="pulse" /> Node.js · Python · AWS · AI/LLM
+              </div>
             </div>
           </Reveal>
         </div>

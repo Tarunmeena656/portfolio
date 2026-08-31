@@ -30,6 +30,29 @@ export default function About() {
               interesting problems are less about calling a model and more about grounding, confidence,
               cost, and what happens when the AI is wrong.
             </p>
+
+            <div className="terminal">
+              <div className="terminal-bar">
+                <span className="dot red" />
+                <span className="dot yellow" />
+                <span className="dot green" />
+                <span className="terminal-title">tarun@backend ~ whoami</span>
+              </div>
+              <pre className="terminal-body">
+                <span className="tk-key">const</span> engineer = {"{"}
+                {"\n"}  name: <span className="tk-str">"{profile.name}"</span>,
+                {"\n"}  role: <span className="tk-str">"{profile.role}"</span>,
+                {"\n"}  experience: <span className="tk-num">3.6</span>, <span className="tk-cmt">// years</span>
+                {"\n"}  stack: [<span className="tk-str">"Node.js"</span>, <span className="tk-str">"TypeScript"</span>, <span className="tk-str">"Python"</span>],
+                {"\n"}  cloud: [<span className="tk-str">"AWS Lambda"</span>, <span className="tk-str">"S3"</span>, <span className="tk-str">"API Gateway"</span>],
+                {"\n"}  ai: [<span className="tk-str">"RAG"</span>, <span className="tk-str">"Embeddings"</span>, <span className="tk-str">"LLM APIs"</span>],
+                {"\n"}  scale: <span className="tk-str">"300M+ records"</span>,
+                {"\n"}  openToWork: <span className="tk-bool">true</span>,
+                {"\n"}{"}"};
+                {"\n\n"}<span className="tk-cmt">// fast, observable, fails gracefully</span>
+                {"\n"}<span className="tk-fn">deploy</span>(engineer);<span className="caret" />
+              </pre>
+            </div>
           </Reveal>
 
           <Reveal delay={200} className="about-side">

@@ -14,6 +14,7 @@ export const profile = {
   github: "https://github.com/Tarunmeena656",
   githubUser: "Tarunmeena656",
   resumeUrl: asset("Tarun_Meena_Resume.pdf"),
+  photo: asset("tarun.jpg"),
   availability: "Open to remote and hybrid backend / AI engineering roles",
   typingRoles: [
     "Backend Developer",
