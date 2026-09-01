@@ -156,6 +156,10 @@ export const projects = [
       "Approval-first publishing workflow so users review AI-generated content before it goes live on connected platforms.",
     ],
     links: { live: "https://www.lucidream.io/" },
+    screenshots: [
+      { src: asset("screenshots/lucidream-home.png"), caption: "lucidream.io — AI Content Chief of Staff" },
+      { src: asset("screenshots/lucidream-features.png"), caption: "Long-form media → clips, captions, articles and social posts" },
+    ],
   },
   {
     id: "materialflow",

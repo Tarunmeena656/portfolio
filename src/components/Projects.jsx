@@ -3,6 +3,20 @@ import { FiChevronLeft, FiChevronRight, FiExternalLink, FiGithub, FiImage, FiX }
 import { projectCategories, projects } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
+/** "MaterialFlow — AI Order..." -> "MF", "Hinch — E-Commerce" -> "H" */
+function initials(title) {
+  const name = title.split(" — ")[0].replace(/[^A-Za-z0-9 ]/g, " ").trim();
+  const words = name.split(/\s+/).filter(Boolean);
+  if (words.length === 1) {
+    const camel = words[0].match(/[A-Z]/g);
+    return camel && camel.length > 1 ? camel.slice(0, 2).join("") : words[0].slice(0, 2).toUpperCase();
+  }
+  return words
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join("");
+}
+
 function ProjectModal({ project, onClose }) {
   const [index, setIndex] = useState(0);
   const shots = project.screenshots || [];
@@ -126,10 +140,15 @@ export default function Projects() {
           {visible.map((p, i) => (
             <Reveal key={p.id} delay={(i % 3) * 80} className={p.featured ? "featured" : ""}>
               <article className={`card project ${p.featured ? "project-featured" : ""}`} onClick={() => setOpenProject(p)}>
-                {p.featured && p.screenshots?.[0] && (
+                {p.screenshots?.[0] ? (
                   <div className="project-cover">
                     <img src={p.screenshots[0].src} alt={p.title} loading="lazy" />
-                    <span className="featured-tag">Featured · Open source</span>
+                    {p.featured && <span className="featured-tag">Featured · Open source</span>}
+                  </div>
+                ) : (
+                  <div className={`project-cover generated cat-${p.category}`} aria-hidden="true">
+                    <span className="cover-initials">{initials(p.title)}</span>
+                    <span className="cover-tags">{p.tags.slice(0, 3).join(" · ")}</span>
                   </div>
                 )}
                 <div className="project-body">
