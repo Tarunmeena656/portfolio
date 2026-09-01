@@ -155,7 +155,7 @@ export const projects = [
       "Automated content-generation pipelines converting unstructured media into brand-specific, publish-ready assets.",
       "Approval-first publishing workflow so users review AI-generated content before it goes live on connected platforms.",
     ],
-    links: {},
+    links: { live: "https://www.lucidream.io/" },
   },
   {
     id: "materialflow",

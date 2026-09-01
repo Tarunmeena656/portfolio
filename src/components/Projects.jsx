@@ -77,7 +77,7 @@ function ProjectModal({ project, onClose }) {
             )}
             {project.links.live && (
               <a className="btn btn-ghost" href={project.links.live} target="_blank" rel="noreferrer">
-                <FiExternalLink /> Live demo
+                <FiExternalLink /> Visit site
               </a>
             )}
             {!project.links.github && !project.links.live && (
@@ -153,6 +153,18 @@ export default function Projects() {
                   </div>
                   <div className="project-foot">
                     <span className="link-like">View details →</span>
+                    {p.links.live && (
+                      <a
+                        href={p.links.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="icon-link"
+                        onClick={(e) => e.stopPropagation()}
+                        title="Visit live site"
+                      >
+                        <FiExternalLink />
+                      </a>
+                    )}
                     {p.links.github && (
                       <a
                         href={p.links.github}
