@@ -172,30 +172,32 @@ export default function Projects() {
                   </div>
                   <div className="project-foot">
                     <span className="link-like">View details →</span>
-                    {p.links.live && (
-                      <a
-                        href={p.links.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-link"
-                        onClick={(e) => e.stopPropagation()}
-                        title="Visit live site"
-                      >
-                        <FiExternalLink />
-                      </a>
-                    )}
-                    {p.links.github && (
-                      <a
-                        href={p.links.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-link"
-                        onClick={(e) => e.stopPropagation()}
-                        title="Source on GitHub"
-                      >
-                        <FiGithub />
-                      </a>
-                    )}
+                    <span className="project-links">
+                      {p.links.live && (
+                        <a
+                          href={p.links.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-link"
+                          onClick={(e) => e.stopPropagation()}
+                          title={p.links.live}
+                        >
+                          <FiExternalLink /> {p.links.live.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+                        </a>
+                      )}
+                      {p.links.github && (
+                        <a
+                          href={p.links.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-link"
+                          onClick={(e) => e.stopPropagation()}
+                          title="Source on GitHub"
+                        >
+                          <FiGithub /> Source
+                        </a>
+                      )}
+                    </span>
                   </div>
                 </div>
               </article>
