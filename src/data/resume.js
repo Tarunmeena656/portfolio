@@ -173,7 +173,11 @@ export const projects = [
       "Hinglish and trade-slang matching with confidence scoring to identify catalogue items from unstructured input.",
       "AI processing wired into real-time inventory, picking, packing, and dispatch workflows across Web, Android, and iOS.",
     ],
-    links: {},
+    links: { live: "https://materialflow.ai/" },
+    screenshots: [
+      { src: asset("screenshots/materialflow-home.png"), caption: "materialflow.ai — AI order & inventory platform" },
+      { src: asset("screenshots/materialflow-features.png"), caption: "WhatsApp orders → structured catalogue data → live inventory" },
+    ],
   },
   {
     id: "enterprise-rag",
@@ -200,7 +204,7 @@ export const projects = [
     highlights: [
       "Python-based audio/content processing workflows and REST APIs automating podcast ingestion and downstream content generation.",
     ],
-    links: {},
+    links: { live: "https://thespice.ai/" },
   },
   {
     id: "hinch",
@@ -213,7 +217,11 @@ export const projects = [
     highlights: [
       "Product catalogue, cart, order management, payment integration, and real-time delivery tracking workflows.",
     ],
-    links: {},
+    links: { live: "https://hinch.in/" },
+    screenshots: [
+      { src: asset("screenshots/hinch-home.png"), caption: "hinch.in — multi-brand e-commerce, 10,000+ SKUs" },
+      { src: asset("screenshots/hinch-features.png"), caption: "Catalogue, cart, orders, payments and delivery tracking" },
+    ],
   },
   {
     id: "netros",
