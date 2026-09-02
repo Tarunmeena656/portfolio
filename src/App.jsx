@@ -22,6 +22,7 @@ import GitHubRepos from "./components/GitHubRepos.jsx";
 import Hero from "./components/Hero.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Projects from "./components/Projects.jsx";
+import ScrollProgress from "./components/ScrollProgress.jsx";
 import ResumeAssistant from "./components/ResumeAssistant.jsx";
 import Skills from "./components/Skills.jsx";
 import { profile } from "./data/resume.js";
@@ -93,6 +94,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
       <Navbar theme={theme} toggleTheme={toggleTheme} onOpenPalette={() => setPaletteOpen(true)} />
       <main>
         <Hero />

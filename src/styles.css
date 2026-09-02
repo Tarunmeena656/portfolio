@@ -1848,3 +1848,116 @@ kbd {
     padding: 16px;
   }
 }
+
+/* ---------- Motion polish ---------- */
+
+/* Reading progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 300;
+  pointer-events: none;
+}
+
+/* Slow shimmer across gradient text (name, section titles) */
+.gradient-text {
+  background-size: 200% 100%;
+  animation: gradient-sweep 7s ease-in-out infinite;
+}
+@keyframes gradient-sweep {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Ambient aurora blobs drifting behind the hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::before {
+  width: 540px;
+  height: 540px;
+  left: -140px;
+  top: -100px;
+  background: radial-gradient(circle, var(--accent, #6d5ef2) 0%, transparent 70%);
+  animation: blob-drift 19s ease-in-out infinite;
+}
+.hero::after {
+  width: 440px;
+  height: 440px;
+  right: -120px;
+  bottom: -80px;
+  background: radial-gradient(circle, var(--accent-2, #22d3ee) 0%, transparent 70%);
+  animation: blob-drift 24s ease-in-out infinite reverse;
+}
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(48px, 34px) scale(1.1);
+  }
+}
+
+/* Sheen sweep across primary buttons on hover */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after {
+  left: 130%;
+}
+
+/* Respect users who turn animations off — professional accessibility baseline */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
