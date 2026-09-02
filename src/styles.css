@@ -1961,3 +1961,145 @@ kbd {
     transform: none !important;
   }
 }
+
+/* ---------- Motion polish, layer two ---------- */
+
+/* Skill / stack chips cascade in after their card reveals */
+.reveal .chips .chip {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.in .chips .chip {
+  opacity: 1;
+  transform: none;
+}
+.reveal.in .chips .chip:nth-child(1) { transition-delay: 0.10s; }
+.reveal.in .chips .chip:nth-child(2) { transition-delay: 0.14s; }
+.reveal.in .chips .chip:nth-child(3) { transition-delay: 0.18s; }
+.reveal.in .chips .chip:nth-child(4) { transition-delay: 0.22s; }
+.reveal.in .chips .chip:nth-child(5) { transition-delay: 0.26s; }
+.reveal.in .chips .chip:nth-child(6) { transition-delay: 0.30s; }
+.reveal.in .chips .chip:nth-child(7) { transition-delay: 0.34s; }
+.reveal.in .chips .chip:nth-child(8) { transition-delay: 0.38s; }
+.reveal.in .chips .chip:nth-child(9) { transition-delay: 0.42s; }
+.reveal.in .chips .chip:nth-child(10) { transition-delay: 0.46s; }
+.reveal.in .chips .chip:nth-child(11) { transition-delay: 0.50s; }
+.reveal.in .chips .chip:nth-child(12) { transition-delay: 0.54s; }
+
+/* Rotating gradient rim on the featured project card */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.project-featured {
+  position: relative;
+}
+.project-featured::after {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--border-angle, 0deg), var(--accent), var(--accent-2), transparent 60%, var(--accent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: border-spin 7s linear infinite;
+  opacity: 0.75;
+  pointer-events: none;
+}
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* Section-title underline draws in with the reveal */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--gradient);
+  margin-top: 12px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s;
+}
+.reveal.in .section-title::after {
+  transform: scaleX(1);
+}
+
+/* Timeline dots pop in; the current role gets a soft radar ripple */
+.reveal.timeline-item .timeline-dot {
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s;
+}
+.reveal.timeline-item.in .timeline-dot {
+  transform: scale(1);
+}
+.timeline-dot.current::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-2);
+  animation: dot-ripple 2.4s ease-out infinite;
+}
+@keyframes dot-ripple {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Portrait ring gently sways */
+.portrait-ring {
+  animation: ring-sway 9s ease-in-out infinite;
+}
+@keyframes ring-sway {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+/* Scroll-down hint bouncing at the bottom of the hero */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 44px auto 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
+  background: var(--card);
+  animation: hint-bounce 2.2s ease-in-out infinite;
+  transition: color 0.2s, border-color 0.2s;
+}
+.scroll-hint:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+@keyframes hint-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}

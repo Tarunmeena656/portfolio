@@ -1,4 +1,4 @@
-import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiArrowRight, FiChevronDown, FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { profile, stats } from "../data/resume.js";
 import { useCountUp } from "../hooks/useCountUp.js";
 import { Reveal, useReveal } from "../hooks/useReveal.jsx";
@@ -91,6 +91,10 @@ export default function Hero() {
             <StatCard key={s.label} stat={s} delay={i * 80} />
           ))}
         </div>
+
+        <a href="#about" className="scroll-hint" aria-label="Scroll to the About section">
+          <FiChevronDown />
+        </a>
       </div>
     </section>
   );
