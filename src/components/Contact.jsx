@@ -27,7 +27,7 @@ export default function Contact() {
   const channels = [
     { icon: <FiMail />, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
     { icon: <FiPhone />, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
-    { icon: <FiLinkedin />, label: "LinkedIn", value: "tarun-meena-3521b224b", href: profile.linkedin },
+    { icon: <FiLinkedin />, label: "LinkedIn", value: "in/tarun-meena--", href: profile.linkedin },
     { icon: <FiGithub />, label: "GitHub", value: profile.githubUser, href: profile.github },
     { icon: <FiMapPin />, label: "Location", value: profile.location },
   ];
