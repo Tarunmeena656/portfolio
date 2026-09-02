@@ -120,6 +120,32 @@ export const projectCategories = [
 
 export const projects = [
   {
+    id: "postflow",
+    featured: true,
+    badge: "Currently building · Open source",
+    title: "PostFlow — AI Content & Publishing Engine",
+    subtitle: "AI-written content series, scheduled and published to LinkedIn / X / Instagram",
+    category: "ai",
+    tags: ["Node.js", "TypeScript", "Fastify", "PostgreSQL", "Redis", "BullMQ", "React", "Docker", "Anthropic Claude", "Stripe"],
+    description:
+      "A multi-tenant SaaS I'm actively building: give it one goal (“teach PostgreSQL internals in 7 days”) and it plans a day-by-day series, writes each post with memory of previous posts and their engagement, then schedules and publishes through a retrying, idempotent queue pipeline — with payment plans enforcing usage limits.",
+    highlights: [
+      "Content memory: before writing, the model sees previous posts with performance data, covered topics and top hooks — structured JSON outputs ({title, hook, body, hashtags, reasoning}) drive an approve / reject / revise-with-feedback review workflow with version history.",
+      "Publishing pipeline: a scheduler claims due posts atomically (conditional UPDATE), Redis/BullMQ workers publish with idempotency keys, exponential backoff with jitter, dead-letter retry and per-account hourly rate limits.",
+      "Per-workspace OAuth apps managed in the UI: LinkedIn / X (PKCE) / Instagram credentials and tokens encrypted at rest (AES-256-GCM), auto-refreshed before expiry — verified with a live LinkedIn publish.",
+      "Payment plans (Free / Pro / Business): server-enforced usage limits returning 402, a sandbox card checkout plus Stripe Checkout with signature-verified idempotent webhooks. 51 tests + a 41-check E2E suite run against both SQLite and the full Docker stack.",
+    ],
+    links: { github: "https://github.com/Tarunmeena656/postflow-" },
+    screenshots: [
+      { src: asset("screenshots/postflow-dashboard.png"), caption: "Dashboard — series progress, queue and activity" },
+      { src: asset("screenshots/postflow-series.png"), caption: "Content Series Engine — day-by-day AI plan with generation status" },
+      { src: asset("screenshots/postflow-review.png"), caption: "Review drawer — AI reasoning, memory used, version history" },
+      { src: asset("screenshots/postflow-analytics.png"), caption: "Analytics — engagement time series and best-time heatmap" },
+      { src: asset("screenshots/postflow-integrations.png"), caption: "Integrations — per-workspace OAuth apps, encrypted credentials" },
+      { src: asset("screenshots/postflow-billing.png"), caption: "Billing — plans, live usage meters, sandbox checkout" },
+    ],
+  },
+  {
     id: "ai-support-agent",
     featured: true,
     title: "AI Customer Support Agent",

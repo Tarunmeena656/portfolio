@@ -143,7 +143,7 @@ export default function Projects() {
                 {p.screenshots?.[0] ? (
                   <div className="project-cover">
                     <img src={p.screenshots[0].src} alt={p.title} loading="lazy" />
-                    {p.featured && <span className="featured-tag">Featured · Open source</span>}
+                    {p.featured && <span className="featured-tag">{p.badge || "Featured · Open source"}</span>}
                   </div>
                 ) : (
                   <div className={`project-cover generated cat-${p.category}`} aria-hidden="true">
