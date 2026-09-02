@@ -10,7 +10,7 @@ export const profile = {
   location: "Bhopal, Madhya Pradesh, India",
   email: "meenatarun656@gmail.com",
   phone: "+91 84629 89962",
-  linkedin: "https://linkedin.com/in/tarun-meena-3521b224b",
+  linkedin: "https://www.linkedin.com/in/tarun-meena--/",
   github: "https://github.com/Tarunmeena656",
   githubUser: "Tarunmeena656",
   resumeUrl: asset("Tarun_Meena_Resume.pdf"),
