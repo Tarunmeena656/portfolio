@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiExternalLink, FiFolder, FiGitBranch, FiGithub, FiStar, FiUsers } from "react-icons/fi";
+import { FiClock, FiCode, FiExternalLink, FiFolder, FiGitBranch, FiGithub, FiStar } from "react-icons/fi";
 import { profile } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
@@ -29,7 +29,7 @@ export default function GitHubRepos() {
     const controller = new AbortController();
     fetch("https://api.github.com/users/" + profile.githubUser, { signal: controller.signal, headers: { Accept: "application/vnd.github+json" } })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((u) => setStats((s) => ({ ...s, repos: u.public_repos, followers: u.followers })))
+      .then((u) => setStats((s) => ({ ...s, repos: u.public_repos })))
       .catch(() => {});
     return () => controller.abort();
   }, []);
@@ -43,7 +43,10 @@ export default function GitHubRepos() {
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((data) => {
         const own = data.filter((r) => !r.fork);
-        setStats((s) => ({ ...s, stars: own.reduce((sum, r) => sum + r.stargazers_count, 0) }));
+        const langCounts = own.reduce((acc, r) => (r.language ? { ...acc, [r.language]: (acc[r.language] || 0) + 1 } : acc), {});
+        const languages = Object.entries(langCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([name]) => name);
+        const lastPush = own.reduce((latest, r) => (r.pushed_at > latest ? r.pushed_at : latest), "");
+        setStats((s) => ({ ...s, languages, lastPush }));
         const list = own
           .sort((a, b) => {
             // Pin the flagship project first, then by stars, then by recency.
@@ -79,18 +82,18 @@ export default function GitHubRepos() {
                   <span>public repos</span>
                 </div>
                 <div className="gh-stat">
-                  <FiStar />
-                  <b>{stats.stars ?? "–"}</b>
-                  <span>stars</span>
+                  <FiCode />
+                  <b className="gh-langs">{stats.languages?.length ? stats.languages.join(" · ") : "–"}</b>
+                  <span>top languages</span>
                 </div>
                 <div className="gh-stat">
-                  <FiUsers />
-                  <b>{stats.followers ?? "–"}</b>
-                  <span>followers</span>
+                  <FiClock />
+                  <b>{stats.lastPush ? timeAgo(stats.lastPush) : "–"}</b>
+                  <span>last push</span>
                 </div>
               </div>
               <div className="gh-graph">
-                <img src={"https://ghchart.rshah.org/6366f1/" + profile.githubUser} alt="GitHub contributions over the last year" loading="lazy" />
+                <img src={"https://ghchart.rshah.org/6366f1/" + profile.githubUser} alt="GitHub contributions over the last year" />
               </div>
             </div>
           </Reveal>

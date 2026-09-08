@@ -2379,3 +2379,12 @@ kbd {
     flex: 1 1 120px;
   }
 }
+
+.gh-stat b.gh-langs {
+  font-size: 14px;
+  min-width: 0;
+}
+
+.gh-stat b {
+  white-space: nowrap;
+}
