@@ -1,6 +1,60 @@
-import { FiCloud, FiCode, FiCpu, FiDatabase, FiLink, FiServer, FiShield, FiTool } from "react-icons/fi";
-import { skills } from "../data/resume.js";
+import {
+  FiBox,
+  FiCloud,
+  FiCode,
+  FiCpu,
+  FiDatabase,
+  FiGitMerge,
+  FiGlobe,
+  FiGrid,
+  FiKey,
+  FiLayers,
+  FiLink,
+  FiLock,
+  FiMessageSquare,
+  FiSearch,
+  FiServer,
+  FiShield,
+  FiTool,
+  FiUsers,
+} from "react-icons/fi";
+import { asset, skills } from "../data/resume.js";
+import { SKILL_ICONS } from "../data/skillIcons.js";
 import { Reveal } from "../hooks/useReveal.jsx";
+
+// Generic glyphs for skills that are concepts rather than products.
+const GLYPHS = {
+  globe: <FiGlobe />,
+  grid: <FiGrid />,
+  search: <FiSearch />,
+  layers: <FiLayers />,
+  prompt: <FiMessageSquare />,
+  box: <FiBox />,
+  pipeline: <FiGitMerge />,
+  database: <FiDatabase />,
+  users: <FiUsers />,
+  lock: <FiLock />,
+  key: <FiKey />,
+  cloud: <FiCloud />,
+  cpu: <FiCpu />,
+  server: <FiServer />,
+};
+
+function SkillChip({ name }) {
+  const meta = SKILL_ICONS[name];
+  return (
+    <span className="chip skill-chip" title={name}>
+      {meta?.src ? (
+        <img className={`skill-logo${meta.mono ? " mono" : ""}`} src={asset(`skills/${meta.src}`)} alt="" width="16" height="16" loading="lazy" />
+      ) : (
+        <span className="skill-logo glyph" aria-hidden="true">
+          {GLYPHS[meta?.glyph] ?? <FiCode />}
+        </span>
+      )}
+      {name}
+    </span>
+  );
+}
 
 const ICONS = {
   code: <FiCode />,
@@ -38,9 +92,7 @@ export default function Skills() {
                 </div>
                 <div className="chips">
                   {group.items.map((item) => (
-                    <span className="chip" key={item}>
-                      {item}
-                    </span>
+                    <SkillChip key={item} name={item} />
                   ))}
                 </div>
               </div>
