@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiExternalLink, FiGitBranch, FiGithub, FiStar } from "react-icons/fi";
+import { FiExternalLink, FiFolder, FiGitBranch, FiGithub, FiStar, FiUsers } from "react-icons/fi";
 import { profile } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
@@ -23,6 +23,16 @@ function timeAgo(iso) {
 export default function GitHubRepos() {
   const [repos, setRepos] = useState(null);
   const [error, setError] = useState(false);
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("https://api.github.com/users/" + profile.githubUser, { signal: controller.signal, headers: { Accept: "application/vnd.github+json" } })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((u) => setStats((s) => ({ ...s, repos: u.public_repos, followers: u.followers })))
+      .catch(() => {});
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -32,8 +42,9 @@ export default function GitHubRepos() {
     })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((data) => {
-        const list = data
-          .filter((r) => !r.fork)
+        const own = data.filter((r) => !r.fork);
+        setStats((s) => ({ ...s, stars: own.reduce((sum, r) => sum + r.stargazers_count, 0) }));
+        const list = own
           .sort((a, b) => {
             // Pin the flagship project first, then by stars, then by recency.
             if (a.name === "AI-Support-Agent") return -1;
@@ -57,6 +68,33 @@ export default function GitHubRepos() {
           </h2>
           <p className="section-sub">Pulled from the GitHub API in real time — what I'm actually pushing to.</p>
         </Reveal>
+
+        {stats && (
+          <Reveal delay={60}>
+            <div className="gh-strip">
+              <div className="gh-stats">
+                <div className="gh-stat">
+                  <FiFolder />
+                  <b>{stats.repos ?? "–"}</b>
+                  <span>public repos</span>
+                </div>
+                <div className="gh-stat">
+                  <FiStar />
+                  <b>{stats.stars ?? "–"}</b>
+                  <span>stars</span>
+                </div>
+                <div className="gh-stat">
+                  <FiUsers />
+                  <b>{stats.followers ?? "–"}</b>
+                  <span>followers</span>
+                </div>
+              </div>
+              <div className="gh-graph">
+                <img src={"https://ghchart.rshah.org/6366f1/" + profile.githubUser} alt="GitHub contributions over the last year" loading="lazy" />
+              </div>
+            </div>
+          </Reveal>
+        )}
 
         <div className="repos-grid">
           {!repos && !error && [0, 1, 2].map((i) => <div key={i} className="card repo skeleton" />)}

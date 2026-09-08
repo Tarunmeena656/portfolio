@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiChevronLeft, FiChevronRight, FiExternalLink, FiGithub, FiImage, FiX } from "react-icons/fi";
+import { FiBookOpen, FiChevronLeft, FiChevronRight, FiExternalLink, FiFileText, FiGithub, FiImage, FiX } from "react-icons/fi";
 import { projectCategories, projects } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
@@ -94,7 +94,17 @@ function ProjectModal({ project, onClose }) {
                 <FiExternalLink /> Visit site
               </a>
             )}
-            {!project.links.github && !project.links.live && (
+            {project.links.docs && (
+              <a className="btn btn-ghost" href={project.links.docs} target="_blank" rel="noreferrer">
+                <FiBookOpen /> System design
+              </a>
+            )}
+            {project.links.blog && (
+              <a className="btn btn-ghost" href={project.links.blog} target="_blank" rel="noreferrer">
+                <FiFileText /> Read the write-up
+              </a>
+            )}
+            {!project.links.github && !project.links.live && !project.links.docs && !project.links.blog && (
               <span className="muted small">Client / proprietary project — code not public.</span>
             )}
           </div>

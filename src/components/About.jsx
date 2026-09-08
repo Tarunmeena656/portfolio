@@ -1,5 +1,5 @@
 import { FiAward, FiBriefcase, FiCpu, FiMapPin } from "react-icons/fi";
-import { education, profile } from "../data/resume.js";
+import { education, now, profile } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
 const facts = [
@@ -75,6 +75,21 @@ export default function About() {
                 <span>{education.period}</span>
                 <span className="edu-gpa">GPA {education.gpa}</span>
               </div>
+            </div>
+            <div className="card now">
+              <div className="now-head">
+                <span className="now-dot" aria-hidden="true" />
+                <span>Now</span>
+                <span className="muted small">· {now.updated}</span>
+              </div>
+              <ul className="now-list">
+                {now.items.map((item) => (
+                  <li key={item.label}>
+                    <span className="now-label">{item.label}</span>
+                    <span>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>

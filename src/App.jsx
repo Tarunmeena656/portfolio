@@ -92,6 +92,14 @@ export default function App() {
         icon: <FiGithub />,
         run: openUrl("https://github.com/Tarunmeena656/AI-Support-Agent"),
       },
+      {
+        id: "ai-workforce",
+        group: "Links",
+        label: "AI Workforce — source code",
+        hint: "featured project",
+        icon: <FiGithub />,
+        run: openUrl("https://github.com/Tarunmeena656/ai-workforce"),
+      },
     ],
     [theme, toggleTheme]
   );

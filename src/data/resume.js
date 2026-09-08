@@ -122,6 +122,35 @@ export const projectCategories = [
 
 export const projects = [
   {
+    id: "ai-workforce",
+    featured: true,
+    badge: "New · Open source",
+    title: "AI Workforce — Enterprise AI Automation Platform",
+    subtitle: "Multi-tenant AI agents with tool calling, RAG, document intelligence, workflows and human approval",
+    category: "ai",
+    tags: ["Node.js", "TypeScript", "Fastify", "Prisma", "PostgreSQL", "pgvector", "Redis", "Anthropic Claude", "React", "Terraform", "AWS"],
+    description:
+      "A multi-tenant SaaS where a company connects its tools and documents, then deploys AI agents that look up orders, answer from policy, extract invoices and run workflows. Every risky action stops for a person and every action is auditable. 15 modules, 6 shared packages, 177 automated tests, verified end to end on real Claude.",
+    highlights: [
+      "Agent loop with a server-side approval gate: every tool call is validated, permission-checked and risk-rated in the tool runtime, never in the prompt. High-risk actions (refunds, cancellations) pause the run, a manager approves in the dashboard, and a worker resumes it from persisted state.",
+      "Durable, event-driven core: a PostgreSQL job queue (FOR UPDATE SKIP LOCKED) with an SQS adapter, exponential backoff and stale-job reclaim, plus an outbox event bus that fans out to workflows, notifications and HMAC-signed webhooks.",
+      "Knowledge and documents: hybrid vector + full-text retrieval fused with reciprocal-rank fusion and cited in answers; schema-constrained invoice / PO / contract extraction with arithmetic validation, duplicate detection and review routing.",
+      "Claude done properly: Opus / Haiku routing by complexity, streaming, prompt caching, structured outputs and per-run cost accounting. A deterministic mock provider runs the whole suite offline; Terraform describes the AWS layout (ECS Fargate, RDS, SQS, S3, CloudFront).",
+    ],
+    links: {
+      github: "https://github.com/Tarunmeena656/ai-workforce",
+      docs: "https://github.com/Tarunmeena656/ai-workforce/blob/main/docs/architecture/system-design.md",
+    },
+    screenshots: [
+      { src: asset("screenshots/aiw-dashboard.png"), caption: "Dashboard — requests, cost, latency and pending approvals" },
+      { src: asset("screenshots/aiw-chat.png"), caption: "Chat — tool calls, citations and per-run cost inline" },
+      { src: asset("screenshots/aiw-approvals.png"), caption: "Approvals — human-in-the-loop for tool calls, workflow steps and extractions" },
+      { src: asset("screenshots/aiw-extraction.png"), caption: "Document intelligence — invoice extraction routed to review" },
+      { src: asset("screenshots/aiw-workflow-editor.png"), caption: "Workflow editor — event trigger and JSON step DSL" },
+      { src: asset("screenshots/aiw-analytics.png"), caption: "Analytics — usage, cost and performance per agent and model" },
+    ],
+  },
+  {
     id: "postflow",
     featured: true,
     badge: "Currently building · Open source",
@@ -162,7 +191,10 @@ export const projects = [
       "TTL+LRU answer cache with knowledge-base-aware invalidation, plus prompt caching to cut LLM cost.",
       "JWT auth with customer/admin roles, ticketing, human-agent inbox, and a dashboard tracking escalation rate, avg confidence, and CSAT from per-answer feedback.",
     ],
-    links: { github: "https://github.com/Tarunmeena656/AI-Support-Agent" },
+    links: {
+      github: "https://github.com/Tarunmeena656/AI-Support-Agent",
+      blog: "https://medium.com/@meenatarun656/i-built-an-ai-customer-support-agent-with-rag-heres-how-it-works-from-documents-to-human-handoff-4e5a6d5914e6",
+    },
     screenshots: [
       { src: asset("screenshots/chat.png"), caption: "Customer chat — confidence badge, sources, feedback" },
       { src: asset("screenshots/chat-escalated.png"), caption: "Low confidence → escalated to a human agent" },
@@ -306,6 +338,16 @@ export const education = {
   location: "Bhopal, India",
   period: "May 2021 – Jun 2024",
   gpa: "8.93 / 10.0",
+};
+
+/** What I'm doing right now - keep this dated and short. */
+export const now = {
+  updated: "September 2026",
+  items: [
+    { label: "Building", text: "AI Workforce, a multi-tenant AI automation platform on Claude, Fastify and PostgreSQL, now verified end to end on real models." },
+    { label: "Writing", text: "Build logs on Medium: the RAG support agent (documents to human handoff) and CI/CD from git push to production." },
+    { label: "Shipping", text: "PostFlow: AI content series scheduled and published to LinkedIn, X and Instagram through a retrying queue pipeline." },
+  ],
 };
 
 export const navLinks = [
