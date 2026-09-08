@@ -43,7 +43,7 @@ function parseItems(xml) {
         link: (pick(item, "link") || "").split("?")[0],
         pubDate: toIso(pick(item, "pubDate")),
         categories: [...item.matchAll(/<category>([\s\S]*?)<\/category>/g)].map((m) => decode(m[1])).filter(Boolean),
-        excerpt: excerpt(text, 190),
+        excerpt: excerpt(text, 150),
         thumbnail: firstImage(content),
         readMinutes: words ? Math.max(1, Math.round(words / 220)) : null,
       };

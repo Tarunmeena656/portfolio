@@ -2203,3 +2203,24 @@ kbd {
     grid-template-columns: 1fr;
   }
 }
+
+.post-thumb.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--accent-2);
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgba(99, 102, 241, 0.22), transparent 60%),
+    radial-gradient(120% 90% at 100% 100%, rgba(34, 211, 238, 0.2), transparent 60%),
+    rgba(127, 127, 127, 0.06);
+  font-size: 28px;
+}
+
+.post-thumb.placeholder span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

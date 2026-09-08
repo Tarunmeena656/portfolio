@@ -54,9 +54,14 @@ export default function Blog() {
           {posts?.map((p, i) => (
             <Reveal key={p.link} delay={i * 60}>
               <a className="card post" href={p.link} target="_blank" rel="noreferrer">
-                {p.thumbnail && (
+                {p.thumbnail ? (
                   <div className="post-thumb">
-                    <img src={p.thumbnail} alt="" loading="lazy" />
+                    <img src={p.thumbnail} alt="" loading="lazy" referrerPolicy="no-referrer" />
+                  </div>
+                ) : (
+                  <div className="post-thumb placeholder" aria-hidden="true">
+                    <SiMedium />
+                    <span>{p.categories?.[0] || "article"}</span>
                   </div>
                 )}
                 <div className="post-body">
