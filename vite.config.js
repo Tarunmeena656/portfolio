@@ -5,4 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_BASE || "/",
+  // Local dev has no serverless runtime: proxy /api to the deployed site so the blog section works.
+  server: { proxy: { "/api": { target: "https://tarun-meena.vercel.app", changeOrigin: true } } },
 });

@@ -1,4 +1,5 @@
 import { FiArrowUp, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { SiMedium } from "react-icons/si";
 import { profile } from "../data/resume.js";
 
 export default function Footer() {
@@ -21,6 +22,9 @@ export default function Footer() {
           </a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
             <FiLinkedin />
+          </a>
+          <a href={profile.medium} target="_blank" rel="noreferrer" title="Medium">
+            <SiMedium />
           </a>
           <a href={`mailto:${profile.email}`} title="Email">
             <FiMail />

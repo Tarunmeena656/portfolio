@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiCheck, FiCopy, FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone, FiSend } from "react-icons/fi";
+import { SiMedium } from "react-icons/si";
 import { profile } from "../data/resume.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
@@ -29,6 +30,7 @@ export default function Contact() {
     { icon: <FiPhone />, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
     { icon: <FiLinkedin />, label: "LinkedIn", value: "in/tarun-meena--", href: profile.linkedin },
     { icon: <FiGithub />, label: "GitHub", value: profile.githubUser, href: profile.github },
+    { icon: <SiMedium />, label: "Medium", value: `@${profile.mediumUser}`, href: profile.medium },
     { icon: <FiMapPin />, label: "Location", value: profile.location },
   ];
 

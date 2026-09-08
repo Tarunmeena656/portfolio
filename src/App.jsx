@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  FiBookOpen,
   FiBriefcase,
   FiCopy,
   FiDownload,
@@ -14,6 +15,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 import About from "./components/About.jsx";
+import Blog from "./components/Blog.jsx";
 import CommandPalette from "./components/CommandPalette.jsx";
 import Contact from "./components/Contact.jsx";
 import Experience from "./components/Experience.jsx";
@@ -54,6 +56,7 @@ export default function App() {
       { id: "skills", group: "Navigate", label: "Skills", icon: <FiTool />, run: scrollTo("skills") },
       { id: "experience", group: "Navigate", label: "Experience", icon: <FiBriefcase />, run: scrollTo("experience") },
       { id: "projects", group: "Navigate", label: "Projects", icon: <FiFolder />, run: scrollTo("projects") },
+      { id: "blog", group: "Navigate", label: "Blog", icon: <FiBookOpen />, run: scrollTo("blog") },
       { id: "contact", group: "Navigate", label: "Contact", icon: <FiMail />, run: scrollTo("contact") },
       {
         id: "resume",
@@ -80,6 +83,7 @@ export default function App() {
       },
       { id: "github", group: "Links", label: "GitHub profile", hint: profile.githubUser, icon: <FiGithub />, run: openUrl(profile.github) },
       { id: "linkedin", group: "Links", label: "LinkedIn profile", icon: <FiLinkedin />, run: openUrl(profile.linkedin) },
+      { id: "medium", group: "Links", label: "Medium blog", hint: `@${profile.mediumUser}`, icon: <FiBookOpen />, run: openUrl(profile.medium) },
       {
         id: "ai-agent",
         group: "Links",
@@ -103,6 +107,7 @@ export default function App() {
         <Experience />
         <Projects />
         <GitHubRepos />
+        <Blog />
         <Contact />
       </main>
       <Footer />

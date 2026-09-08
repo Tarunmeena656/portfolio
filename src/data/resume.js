@@ -13,6 +13,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/tarun-meena--/",
   github: "https://github.com/Tarunmeena656",
   githubUser: "Tarunmeena656",
+  medium: "https://medium.com/@meenatarun656",
+  mediumUser: "meenatarun656",
   resumeUrl: asset("Tarun_Meena_Resume.pdf"),
   photo: asset("tarun.jpg"),
   availability: "Open to remote and hybrid backend / AI engineering roles",
@@ -312,5 +314,6 @@ export const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "github", label: "GitHub" },
+  { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ];
