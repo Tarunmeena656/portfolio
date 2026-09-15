@@ -42,7 +42,7 @@ export default function About() {
                 <span className="tk-key">const</span> engineer = {"{"}
                 {"\n"}  name: <span className="tk-str">"{profile.name}"</span>,
                 {"\n"}  role: <span className="tk-str">"{profile.role}"</span>,
-                {"\n"}  experience: <span className="tk-num">3.6</span>, <span className="tk-cmt">// years</span>
+                {"\n"}  experience: <span className="tk-num">3.9</span>, <span className="tk-cmt">// years</span>
                 {"\n"}  stack: [<span className="tk-str">"Node.js"</span>, <span className="tk-str">"TypeScript"</span>, <span className="tk-str">"Python"</span>],
                 {"\n"}  cloud: [<span className="tk-str">"AWS Lambda"</span>, <span className="tk-str">"S3"</span>, <span className="tk-str">"API Gateway"</span>],
                 {"\n"}  ai: [<span className="tk-str">"RAG"</span>, <span className="tk-str">"Embeddings"</span>, <span className="tk-str">"LLM APIs"</span>],

@@ -43,10 +43,12 @@ function buildFacts() {
   );
 
   experience.forEach((e) =>
-    facts.push({
-      tags: `experience work job role company career ${e.company} ${e.title} ${e.period} ${e.stack.join(" ")}`,
-      text: `${e.title} at ${e.company} (${e.period}, ${e.location}). ${e.bullets.join(" ")}`,
-    })
+    e.roles.forEach((r) =>
+      facts.push({
+        tags: `experience work job role company career ${e.company} ${r.title} ${r.period} ${e.stack.join(" ")}`,
+        text: `${r.title} at ${e.company} (${r.period}, ${e.location}). ${r.bullets.join(" ")}`,
+      })
+    )
   );
 
   projects.forEach((p) =>

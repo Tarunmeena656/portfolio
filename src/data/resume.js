@@ -26,13 +26,13 @@ export const profile = {
     "RAG & Vector Search Practitioner",
   ],
   summary:
-    "Backend Developer with 3.6+ years of experience building REST APIs and scalable server-side systems using Node.js, TypeScript, and Python. Skilled in integrating AI/LLM services (OpenAI, Anthropic) into production content and automation pipelines, optimizing MongoDB at 300M+ record scale, and deploying AWS serverless architecture (Lambda, S3, EC2, API Gateway).",
+    "Backend Developer with 3.9+ years of experience (nearing 4 years) building REST APIs and scalable server-side systems using Node.js, TypeScript, and Python. Skilled in integrating AI/LLM services (OpenAI, Anthropic) into production content and automation pipelines, optimizing MongoDB at 300M+ record scale, and deploying AWS serverless architecture (Lambda, S3, EC2, API Gateway).",
   summaryExtra:
     "I've delivered production systems across AI/GenAI content platforms, e-commerce, healthcare, and media — cutting infrastructure costs by up to 20% and improving API/query performance by up to 60%. I care about systems that are fast, observable, and fail gracefully.",
 };
 
 export const stats = [
-  { value: 3.6, suffix: "+", decimals: 1, label: "Years of experience" },
+  { value: 3.9, suffix: "+", decimals: 1, label: "Years of experience" },
   { value: 300, suffix: "M+", decimals: 0, label: "Records optimized in MongoDB" },
   { value: 60, suffix: "%", decimals: 0, label: "Faster query performance" },
   { value: 20, suffix: "%", decimals: 0, label: "AWS cost reduction" },
@@ -74,41 +74,53 @@ export const skills = [
   { category: "Tools", icon: "tools", items: ["Git", "GitHub", "GitLab", "Bitbucket"] },
 ];
 
+/**
+ * Grouped by company (one card per employer, roles nested inside), mirroring the resume.
+ * `period` on the company is the total tenure; each role carries its own dates.
+ */
 export const experience = [
   {
-    title: "Backend Developer",
     company: "Rootlex Technology Pvt. Ltd.",
     location: "Remote, India",
-    period: "Jul 2024 – Present",
+    period: "Oct 2025 – Present",
     current: true,
     stack: ["Node.js", "TypeScript", "Python", "AWS", "OpenAI", "Anthropic"],
-    bullets: [
-      "Architected and maintained RESTful backend APIs for multiple client products (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow) using Node.js, TypeScript, Python, and AWS.",
-      "Built AI-driven content and order-processing pipelines integrating OpenAI/Anthropic LLM APIs, combining prompt engineering with backend workflow design for real-time, multi-platform systems.",
-      "Implemented Python-based automation scripts and AI/LLM workflows to streamline content processing, data enrichment, and structured extraction from unstructured input.",
+    roles: [
+      {
+        title: "Backend Developer",
+        period: "Oct 2025 – Present",
+        current: true,
+        bullets: [
+          "Architected and maintained RESTful backend APIs for multiple client products (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow) using Node.js, TypeScript, Python, and AWS.",
+          "Built AI-driven content and order-processing pipelines integrating OpenAI/Anthropic LLM APIs, combining prompt engineering with backend workflow design for real-time, multi-platform systems.",
+          "Implemented Python-based automation scripts and AI/LLM workflows to streamline content processing, data enrichment, and structured extraction from unstructured input.",
+        ],
+      },
     ],
   },
   {
-    title: "Node.js Developer",
     company: "Bigscal Technologies Pvt. Ltd.",
     location: "Surat, Gujarat, India",
-    period: "Jul 2023 – Jun 2024",
-    stack: ["Node.js", "TypeScript", "MongoDB", "AWS Lambda", "Stripe", "Razorpay"],
-    bullets: [
-      "Reduced AWS infrastructure costs by 20% by migrating scraping workloads to AWS Lambda serverless functions.",
-      "Cut MongoDB response time 40–60% across 300M+ records through strategic indexing and aggregation pipelines; built RBAC for S3 and MongoDB resources.",
-      "Integrated payment gateways (Stripe, Razorpay) and third-party APIs, improving transaction reliability across client applications.",
-      "Delivered multiple client-facing projects using TypeScript, Node.js, and MongoDB within Agile sprints.",
-    ],
-  },
-  {
-    title: "Software Engineering Intern",
-    company: "Bigscal Technologies Pvt. Ltd.",
-    location: "Surat, Gujarat, India",
-    period: "Jan 2023 – Jun 2023",
-    stack: ["Node.js", "MongoDB", "REST APIs"],
-    bullets: [
-      "Improved REST API response time by 25% through server-side caching and MongoDB query optimization.",
+    period: "Jan 2023 – Oct 2025",
+    stack: ["Node.js", "TypeScript", "MongoDB", "AWS Lambda", "Stripe", "Razorpay", "REST APIs"],
+    roles: [
+      {
+        title: "Node.js Developer",
+        period: "Jul 2023 – Oct 2025",
+        bullets: [
+          "Reduced AWS infrastructure costs by 20% by migrating scraping workloads to AWS Lambda serverless functions.",
+          "Cut MongoDB response time 40–60% across 300M+ records through strategic indexing and aggregation pipelines; built RBAC for S3 and MongoDB resources.",
+          "Integrated payment gateways (Stripe, Razorpay) and third-party APIs, improving transaction reliability across client applications.",
+          "Delivered multiple client-facing projects using TypeScript, Node.js, and MongoDB within Agile sprints.",
+        ],
+      },
+      {
+        title: "Software Engineering Intern",
+        period: "Jan 2023 – Jun 2023",
+        bullets: [
+          "Improved REST API response time by 25% through server-side caching and MongoDB query optimization.",
+        ],
+      },
     ],
   },
 ];

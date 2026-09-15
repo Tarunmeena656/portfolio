@@ -76,7 +76,7 @@ export default function Hero() {
               <div className="portrait-ring" aria-hidden="true" />
               <img src={profile.photo} alt={`${profile.name} — ${profile.role}`} className="portrait-img" />
               <div className="float-badge badge-top">
-                <span className="fb-value">3.6+</span>
+                <span className="fb-value">3.9+</span>
                 <span className="fb-label">years shipping backends</span>
               </div>
               <div className="float-badge badge-bottom">
