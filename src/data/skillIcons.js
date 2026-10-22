@@ -7,14 +7,35 @@ export const SKILL_ICONS = {
   TypeScript: { src: "typescript.svg" },
   Python: { src: "python.svg" },
 
-  // Backend
+  // Frontend
+  React: { src: "react.svg" },
+  "Next.js": { src: "nextdotjs.svg", mono: true },
+  "React Hooks": { src: "react.svg" },
+  Redux: { src: "redux.svg" },
+  "Context API": { src: "react.svg" },
+  HTML5: { src: "html5.svg" },
+  CSS3: { src: "css.svg" },
+  "Tailwind CSS": { src: "tailwindcss.svg" },
+  "Responsive Design": { glyph: "layout" },
+
+  // Backend (Node.js)
   "Node.js": { src: "nodejs.svg" },
   "Express.js": { src: "express.svg", mono: true },
+  NestJS: { src: "nestjs.svg" },
   "Hapi.js": { glyph: "server" },
   Fastify: { src: "fastify.svg", mono: true },
-  FastAPI: { src: "fastapi.svg" },
   "RESTful API Design": { glyph: "globe" },
   Microservices: { glyph: "grid" },
+  "Swagger/OpenAPI": { src: "swagger.svg" },
+
+  // Backend (Python)
+  FastAPI: { src: "fastapi.svg" },
+  Flask: { src: "flask.svg", mono: true },
+  Django: { src: "django.svg" },
+  "Django REST Framework": { src: "django.svg" },
+  Pydantic: { src: "pydantic.svg" },
+  SQLAlchemy: { src: "sqlalchemy.svg" },
+  Celery: { src: "celery.svg" },
 
   // AI / LLM
   "OpenAI API": { glyph: "cpu" },
@@ -31,6 +52,7 @@ export const SKILL_ICONS = {
   PostgreSQL: { src: "postgresql.svg" },
   SQL: { glyph: "database" },
   TypeORM: { src: "typeorm.svg" },
+  Redis: { src: "redis.svg" },
   Medusa: { src: "medusa.svg", mono: true },
   ChromaDB: { glyph: "database" },
 
@@ -40,6 +62,9 @@ export const SKILL_ICONS = {
   EC2: { glyph: "cloud" },
   "API Gateway": { glyph: "cloud" },
   "Serverless Architecture": { src: "serverless.svg" },
+  Docker: { src: "docker.svg" },
+  Kubernetes: { src: "kubernetes.svg" },
+  "CI/CD Pipelines": { glyph: "pipeline" },
   Nginx: { src: "nginx.svg" },
 
   // Auth & Security
@@ -47,6 +72,11 @@ export const SKILL_ICONS = {
   RBAC: { glyph: "users" },
   OAuth: { glyph: "key" },
   "Secure API Design": { glyph: "lock" },
+
+  // Testing
+  Jest: { src: "jest.svg" },
+  Pytest: { src: "pytest.svg" },
+  Postman: { glyph: "send" },
 
   // Integrations
   Stripe: { src: "stripe.svg" },

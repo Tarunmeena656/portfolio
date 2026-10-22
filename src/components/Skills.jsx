@@ -1,5 +1,6 @@
 import {
   FiBox,
+  FiCheckCircle,
   FiCloud,
   FiCode,
   FiCpu,
@@ -9,12 +10,15 @@ import {
   FiGrid,
   FiKey,
   FiLayers,
+  FiLayout,
   FiLink,
   FiLock,
   FiMessageSquare,
   FiSearch,
+  FiSend,
   FiServer,
   FiShield,
+  FiTerminal,
   FiTool,
   FiUsers,
 } from "react-icons/fi";
@@ -38,6 +42,8 @@ const GLYPHS = {
   cloud: <FiCloud />,
   cpu: <FiCpu />,
   server: <FiServer />,
+  layout: <FiLayout />,
+  send: <FiSend />,
 };
 
 function SkillChip({ name }) {
@@ -58,11 +64,14 @@ function SkillChip({ name }) {
 
 const ICONS = {
   code: <FiCode />,
+  layout: <FiLayout />,
   server: <FiServer />,
+  python: <FiTerminal />,
   brain: <FiCpu />,
   database: <FiDatabase />,
   cloud: <FiCloud />,
   shield: <FiShield />,
+  check: <FiCheckCircle />,
   plug: <FiLink />,
   tools: <FiTool />,
 };
@@ -77,7 +86,8 @@ export default function Skills() {
             The <span className="gradient-text">toolbox</span> I build with
           </h2>
           <p className="section-sub">
-            Backend-first, cloud-native, and increasingly AI-shaped. These are the technologies I've used in
+            Full-stack with a backend core: MERN and NestJS on the server, React and Next.js in the browser, Python for
+            AI pipelines, and the cloud and DevOps tooling to ship it. These are the technologies I've used in
             production, not just tutorials.
           </p>
         </Reveal>

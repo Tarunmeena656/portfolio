@@ -5,30 +5,31 @@ export const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 export const profile = {
   name: "Tarun Meena",
   firstName: "Tarun",
-  role: "Backend Developer",
-  tagline: "Node.js · Python · TypeScript · AWS · AI/LLM Integration",
+  role: "Full-Stack (MERN) & Backend Developer",
+  tagline: "Node.js · NestJS · React · Next.js · Python · FastAPI · TypeScript · MongoDB · AWS · Kubernetes",
   location: "Bhopal, Madhya Pradesh, India",
   email: "meenatarun656@gmail.com",
   phone: "+91 84629 89962",
-  linkedin: "https://www.linkedin.com/in/tarun-meena--/",
+  linkedin: "https://www.linkedin.com/in/tarun-meena-3521b224b/",
   github: "https://github.com/Tarunmeena656",
   githubUser: "Tarunmeena656",
   medium: "https://medium.com/@meenatarun656",
   mediumUser: "meenatarun656",
   resumeUrl: asset("Tarun_Meena_Resume.pdf"),
   photo: asset("tarun.jpg"),
-  availability: "Open to remote and hybrid backend / AI engineering roles",
+  availability: "Open to remote and hybrid full-stack, backend and AI engineering roles",
   typingRoles: [
+    "Full-Stack (MERN) Developer",
     "Backend Developer",
-    "Node.js & TypeScript Engineer",
+    "Node.js · NestJS · TypeScript Engineer",
+    "React & Next.js Developer",
+    "Python · FastAPI Developer",
     "AI / LLM Integration Specialist",
-    "AWS Serverless Builder",
-    "RAG & Vector Search Practitioner",
   ],
   summary:
-    "Backend Developer with 3.9+ years of experience (nearing 4 years) building REST APIs and scalable server-side systems using Node.js, TypeScript, and Python. Skilled in integrating AI/LLM services (OpenAI, Anthropic) into production content and automation pipelines, optimizing MongoDB at 300M+ record scale, and deploying AWS serverless architecture (Lambda, S3, EC2, API Gateway).",
+    "Full-Stack and Backend Developer with 3.9+ years of experience (nearing 4 years) building scalable REST APIs and web applications with the MERN stack (MongoDB, Express.js, React, Node.js), NestJS, Next.js, TypeScript, and Python (FastAPI). I deliver features end to end, from database design and API development to React user interfaces.",
   summaryExtra:
-    "I've delivered production systems across AI/GenAI content platforms, e-commerce, healthcare, and media — cutting infrastructure costs by up to 20% and improving API/query performance by up to 60%. I care about systems that are fast, observable, and fail gracefully.",
+    "Experienced in optimizing MongoDB at 300M+ record scale, deploying AWS serverless architecture (Lambda, S3, EC2, API Gateway), working with CI/CD pipelines and Kubernetes-based deployments, and integrating AI/LLM services (OpenAI, Anthropic) into production systems. I've delivered production systems across AI/GenAI content platforms, e-commerce, healthcare, and media — cutting infrastructure costs by up to 20% and improving API/query performance by up to 60%.",
 };
 
 export const stats = [
@@ -42,9 +43,19 @@ export const stats = [
 export const skills = [
   { category: "Languages", icon: "code", items: ["JavaScript (ES6+)", "TypeScript", "Python"] },
   {
-    category: "Backend",
+    category: "Frontend",
+    icon: "layout",
+    items: ["React", "Next.js", "React Hooks", "Redux", "Context API", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
+  },
+  {
+    category: "Backend (Node.js)",
     icon: "server",
-    items: ["Node.js", "Express.js", "Hapi.js", "Fastify", "FastAPI", "RESTful API Design", "Microservices"],
+    items: ["Node.js", "Express.js", "NestJS", "Fastify", "Hapi.js", "RESTful API Design", "Microservices", "Swagger/OpenAPI"],
+  },
+  {
+    category: "Backend (Python)",
+    icon: "python",
+    items: ["FastAPI", "Flask", "Django", "Django REST Framework", "Pydantic", "SQLAlchemy", "Celery"],
   },
   {
     category: "AI / LLM",
@@ -62,14 +73,25 @@ export const skills = [
   {
     category: "Databases",
     icon: "database",
-    items: ["MongoDB", "Mongoose", "PostgreSQL", "SQL", "TypeORM", "Medusa", "ChromaDB"],
+    items: ["MongoDB", "Mongoose", "PostgreSQL", "SQL", "TypeORM", "Redis", "Medusa", "ChromaDB"],
   },
   {
     category: "Cloud / DevOps",
     icon: "cloud",
-    items: ["AWS Lambda", "S3", "EC2", "API Gateway", "Serverless Architecture", "Nginx"],
+    items: [
+      "AWS Lambda",
+      "S3",
+      "EC2",
+      "API Gateway",
+      "Serverless Architecture",
+      "Docker",
+      "Kubernetes",
+      "CI/CD Pipelines",
+      "Nginx",
+    ],
   },
   { category: "Auth & Security", icon: "shield", items: ["JWT", "RBAC", "OAuth", "Secure API Design"] },
+  { category: "Testing", icon: "check", items: ["Jest", "Pytest", "Postman"] },
   { category: "Integrations", icon: "plug", items: ["Stripe", "Razorpay", "Puppeteer", "Cheerio", "FCM"] },
   { category: "Tools", icon: "tools", items: ["Git", "GitHub", "GitLab", "Bitbucket"] },
 ];
@@ -84,14 +106,15 @@ export const experience = [
     location: "Remote, India",
     period: "Oct 2025 – Present",
     current: true,
-    stack: ["Node.js", "TypeScript", "Python", "AWS", "OpenAI", "Anthropic"],
+    stack: ["Node.js", "NestJS", "TypeScript", "React", "Python", "AWS", "OpenAI", "Anthropic"],
     roles: [
       {
         title: "Backend Developer",
         period: "Oct 2025 – Present",
         current: true,
         bullets: [
-          "Architected and maintained RESTful backend APIs for multiple client products (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow) using Node.js, TypeScript, Python, and AWS.",
+          "Architected and maintained RESTful backend APIs for multiple client products (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow) using Node.js, NestJS, TypeScript, Python, and AWS.",
+          "Built React-based frontend components and interfaces to support internal tools and client-facing product features, working across the stack alongside backend API development.",
           "Built AI-driven content and order-processing pipelines integrating OpenAI/Anthropic LLM APIs, combining prompt engineering with backend workflow design for real-time, multi-platform systems.",
           "Implemented Python-based automation scripts and AI/LLM workflows to streamline content processing, data enrichment, and structured extraction from unstructured input.",
         ],
@@ -108,8 +131,8 @@ export const experience = [
         title: "Node.js Developer",
         period: "Jul 2023 – Oct 2025",
         bullets: [
-          "Reduced AWS infrastructure costs by 20% by migrating scraping workloads to AWS Lambda serverless functions.",
           "Cut MongoDB response time 40–60% across 300M+ records through strategic indexing and aggregation pipelines; built RBAC for S3 and MongoDB resources.",
+          "Reduced AWS infrastructure costs by 20% by migrating scraping workloads to AWS Lambda serverless functions.",
           "Integrated payment gateways (Stripe, Razorpay) and third-party APIs, improving transaction reliability across client applications.",
           "Delivered multiple client-facing projects using TypeScript, Node.js, and MongoDB within Agile sprints.",
         ],
@@ -216,21 +239,20 @@ export const projects = [
     ],
   },
   {
-    id: "lucidream",
-    title: "Lucidream — AI Content Chief of Staff",
-    subtitle: "Long-form media → publish-ready content, with approval-first publishing",
-    category: "ai",
-    tags: ["AI/GenAI", "LLMs", "Python", "Node.js", "Content Automation"],
+    id: "hinch",
+    title: "Hinch — E-Commerce Platform",
+    subtitle: "Multi-brand commerce: 10,000+ SKUs across 200+ brands",
+    category: "backend",
+    tags: ["Node.js", "TypeScript", "React", "MongoDB", "AWS"],
     description:
-      "Backend and AI workflows that transform long-form podcast and video content into clips, captions, show notes, articles, and social-media posts.",
+      "Backend APIs for a multi-brand e-commerce platform supporting 10,000+ SKUs across 200+ brands, with React interfaces on top.",
     highlights: [
-      "Automated content-generation pipelines converting unstructured media into brand-specific, publish-ready assets.",
-      "Approval-first publishing workflow so users review AI-generated content before it goes live on connected platforms.",
+      "Product catalogue, cart, order management, payment integration, and real-time delivery tracking workflows.",
     ],
-    links: { live: "https://www.lucidream.io/" },
+    links: { live: "https://hinch.in/" },
     screenshots: [
-      { src: asset("screenshots/lucidream-home.png"), caption: "lucidream.io — AI Content Chief of Staff" },
-      { src: asset("screenshots/lucidream-features.png"), caption: "Long-form media → clips, captions, articles and social posts" },
+      { src: asset("screenshots/hinch-home.png"), caption: "hinch.in — multi-brand e-commerce, 10,000+ SKUs" },
+      { src: asset("screenshots/hinch-features.png"), caption: "Catalogue, cart, orders, payments and delivery tracking" },
     ],
   },
   {
@@ -238,7 +260,7 @@ export const projects = [
     title: "MaterialFlow — AI Order & Inventory Platform",
     subtitle: "WhatsApp text, images, PDFs and voice notes → structured orders",
     category: "ai",
-    tags: ["Node.js", "Python", "TypeScript", "AI/LLM", "AWS"],
+    tags: ["Node.js", "Python", "TypeScript", "React", "AI/LLM", "AWS"],
     description:
       "An AI-assisted order extraction system that turns messy multi-format WhatsApp input into structured catalogue and order data connected to live inventory.",
     highlights: [
@@ -249,6 +271,25 @@ export const projects = [
     screenshots: [
       { src: asset("screenshots/materialflow-home.png"), caption: "materialflow.ai — AI order & inventory platform" },
       { src: asset("screenshots/materialflow-features.png"), caption: "WhatsApp orders → structured catalogue data → live inventory" },
+    ],
+  },
+  {
+    id: "lucidream",
+    title: "Lucidream — AI Content Chief of Staff",
+    subtitle: "Long-form media → publish-ready content, with approval-first publishing",
+    category: "ai",
+    tags: ["AI/GenAI", "LLMs", "Python", "Node.js", "React", "Content Automation"],
+    description:
+      "Backend and AI workflows that transform long-form podcast and video content into clips, captions, show notes, articles, and social-media posts.",
+    highlights: [
+      "Automated content-generation pipelines converting unstructured media into brand-specific, publish-ready assets.",
+      "Approval-first publishing workflow so users review AI-generated content before it goes live on connected platforms.",
+      "React components for the content review and approval interface used to preview and publish AI-generated assets.",
+    ],
+    links: { live: "https://www.lucidream.io/" },
+    screenshots: [
+      { src: asset("screenshots/lucidream-home.png"), caption: "lucidream.io — AI Content Chief of Staff" },
+      { src: asset("screenshots/lucidream-features.png"), caption: "Long-form media → clips, captions, articles and social posts" },
     ],
   },
   {
@@ -277,23 +318,6 @@ export const projects = [
       "Python-based audio/content processing workflows and REST APIs automating podcast ingestion and downstream content generation.",
     ],
     links: { live: "https://thespice.ai/" },
-  },
-  {
-    id: "hinch",
-    title: "Hinch — E-Commerce Platform",
-    subtitle: "Multi-brand commerce backend: 10,000+ SKUs across 200+ brands",
-    category: "backend",
-    tags: ["Node.js", "TypeScript", "MongoDB", "AWS"],
-    description:
-      "Backend APIs for a multi-brand e-commerce platform supporting 10,000+ SKUs across 200+ brands.",
-    highlights: [
-      "Product catalogue, cart, order management, payment integration, and real-time delivery tracking workflows.",
-    ],
-    links: { live: "https://hinch.in/" },
-    screenshots: [
-      { src: asset("screenshots/hinch-home.png"), caption: "hinch.in — multi-brand e-commerce, 10,000+ SKUs" },
-      { src: asset("screenshots/hinch-features.png"), caption: "Catalogue, cart, orders, payments and delivery tracking" },
-    ],
   },
   {
     id: "netros",
@@ -354,11 +378,11 @@ export const education = {
 
 /** What I'm doing right now - keep this dated and short. */
 export const now = {
-  updated: "September 2026",
+  updated: "October 2026",
   items: [
-    { label: "Building", text: "AI Workforce, a multi-tenant AI automation platform on Claude, Fastify and PostgreSQL, now verified end to end on real models." },
+    { label: "Building", text: "AI Workforce, a multi-tenant AI automation platform on Claude, Fastify and PostgreSQL, verified end to end on real models." },
+    { label: "Shipping", text: "A contest platform in Express, PostgreSQL and React with natural-language search and AI question generation, live on Render." },
     { label: "Writing", text: "Build logs on Medium: the RAG support agent (documents to human handoff) and CI/CD from git push to production." },
-    { label: "Shipping", text: "PostFlow: AI content series scheduled and published to LinkedIn, X and Instagram through a retrying queue pipeline." },
   ],
 };
 

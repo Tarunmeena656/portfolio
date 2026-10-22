@@ -16,7 +16,7 @@ export default function About() {
         <Reveal>
           <p className="eyebrow">About</p>
           <h2 className="section-title">
-            Backend engineer who ships <span className="gradient-text">production AI systems</span>
+            Full-stack and backend engineer who ships <span className="gradient-text">production AI systems</span>
           </h2>
         </Reveal>
 
