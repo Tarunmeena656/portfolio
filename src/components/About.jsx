@@ -4,7 +4,7 @@ import { Reveal } from "../hooks/useReveal.jsx";
 
 const facts = [
   { icon: <FiMapPin />, label: "Based in", value: "Bhopal, India · Remote-friendly" },
-  { icon: <FiBriefcase />, label: "Currently", value: "Backend Developer @ Rootlex Technology" },
+  { icon: <FiBriefcase />, label: "Currently", value: "Full-Stack Developer – AI @ Rootlex Technology" },
   { icon: <FiCpu />, label: "Focus", value: "Scalable APIs · AWS serverless · AI/LLM systems" },
   { icon: <FiAward />, label: "Education", value: `${education.degree.split(" (")[0]} · GPA ${education.gpa}` },
 ];

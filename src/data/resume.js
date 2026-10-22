@@ -109,12 +109,12 @@ export const experience = [
     stack: ["Node.js", "NestJS", "TypeScript", "React", "Python", "AWS", "OpenAI", "Anthropic"],
     roles: [
       {
-        title: "Backend Developer",
+        title: "Full-Stack Developer – AI",
         period: "Oct 2025 – Present",
         current: true,
         bullets: [
-          "Architected and maintained RESTful backend APIs for multiple client products (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow) using Node.js, NestJS, TypeScript, Python, and AWS.",
-          "Built React-based frontend components and interfaces to support internal tools and client-facing product features, working across the stack alongside backend API development.",
+          "Architected and maintained full-stack products for multiple clients (Lucidream, Hinch, Netros, TheSpice.AI, MaterialFlow), building RESTful APIs with Node.js, NestJS, TypeScript, Python, and AWS alongside React interfaces.",
+          "Built React-based frontend components and interfaces for internal tools and client-facing product features, delivering features end-to-end across the stack.",
           "Built AI-driven content and order-processing pipelines integrating OpenAI/Anthropic LLM APIs, combining prompt engineering with backend workflow design for real-time, multi-platform systems.",
           "Implemented Python-based automation scripts and AI/LLM workflows to streamline content processing, data enrichment, and structured extraction from unstructured input.",
         ],
@@ -125,23 +125,23 @@ export const experience = [
     company: "Bigscal Technologies Pvt. Ltd.",
     location: "Surat, Gujarat, India",
     period: "Jan 2023 – Oct 2025",
-    stack: ["Node.js", "TypeScript", "MongoDB", "AWS Lambda", "Stripe", "Razorpay", "REST APIs"],
+    stack: ["MongoDB", "Express.js", "React", "Node.js", "TypeScript", "AWS Lambda", "Stripe", "Razorpay"],
     roles: [
       {
-        title: "Node.js Developer",
+        title: "MERN Stack Developer",
         period: "Jul 2023 – Oct 2025",
         bullets: [
           "Cut MongoDB response time 40–60% across 300M+ records through strategic indexing and aggregation pipelines; built RBAC for S3 and MongoDB resources.",
           "Reduced AWS infrastructure costs by 20% by migrating scraping workloads to AWS Lambda serverless functions.",
           "Integrated payment gateways (Stripe, Razorpay) and third-party APIs, improving transaction reliability across client applications.",
-          "Delivered multiple client-facing projects using TypeScript, Node.js, and MongoDB within Agile sprints.",
+          "Delivered multiple client-facing projects using the MERN stack (MongoDB, Express.js, React, Node.js) and TypeScript within Agile sprints.",
         ],
       },
       {
-        title: "Software Engineering Intern",
+        title: "MERN Stack Intern",
         period: "Jan 2023 – Jun 2023",
         bullets: [
-          "Improved REST API response time by 25% through server-side caching and MongoDB query optimization.",
+          "Worked on MERN stack applications; improved REST API response time by 25% through server-side caching and MongoDB query optimization.",
         ],
       },
     ],
@@ -369,7 +369,7 @@ export const projects = [
 ];
 
 export const education = {
-  degree: "Master of Computer Applications (MCA)",
+  degree: "Master of Computer Application (MCA)",
   school: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
   location: "Bhopal, India",
   period: "May 2021 – Jun 2024",
